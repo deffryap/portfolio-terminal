@@ -152,7 +152,7 @@ const PortfolioTerminal: React.FC<PortfolioTerminalProps> = ({ onExit }) => {
       <div>============ ABOUT DEFFRY ABHIRAMA PUTRA ============</div>
       <div>Role: Full-Stack Developer</div>
       <div>Experience: 3+ years in software development</div>
-      <div>Location: Yogyakarta, Indonesia, Earth, Milky Way</div>
+      <div>Location: Yogyakarta, Indonesia</div>
       <div>Education: Informatics, UIN Sunan Kalijaga</div>
     </div>
   );
@@ -161,8 +161,8 @@ const PortfolioTerminal: React.FC<PortfolioTerminalProps> = ({ onExit }) => {
     <div className="font-mono space-y-2 text-sm text-[var(--accent-light)]">
       <div>============ TECHNICAL SKILLS ============</div>
       <div>Frontend: React, Next.js, Vue.js, TypeScript, Tailwind CSS</div>
-      <div>Backend: Node.js, Express.js </div>
-      <div>Database & Cloud: PostgreSQL, MongoDB</div>
+      <div>Backend: Node.js, Express.js, PHP </div>
+      <div>Database: PostgreSQL, MongoDB</div>
     </div>
   );
 
@@ -374,7 +374,7 @@ const PortfolioTerminal: React.FC<PortfolioTerminalProps> = ({ onExit }) => {
 
         {/* Main Terminal Area */}
         <motion.div className="flex flex-col h-screen border-l" style={{borderColor: 'var(--accent-dark)'}} initial={{ x: 100 }} animate={{ x: 0 }}>
-          <div className="flex items-center justify-between w-full px-4 py-2 bg-[var(--terminal-bg)] border-b" style={{ borderColor: 'var(--main-color)' }}>
+          <div className="flex items-center justify-between w-screen lg:w-full px-4 py-2 bg-[var(--terminal-bg)] border-b" style={{ borderColor: 'var(--main-color)' }}>
             <div className="flex items-center space-x-2">
               <div className="flex space-x-1.5">
                 <div className="w-3 h-3 rounded-full bg-red-500"></div>
