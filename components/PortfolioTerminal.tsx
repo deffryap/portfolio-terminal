@@ -22,7 +22,7 @@ const PortfolioTerminal: React.FC<PortfolioTerminalProps> = ({ onExit }) => {
   const [mode, setMode] = useState<'dark' | 'light'>('dark');
   const [accent, setAccent] = useState<'green' | 'orange' | 'white'>('green');
   const [placeholder, setPlaceholder] = useState('');
-  const [sidebarOpen, setSidebarOpen] = useState(false); // Tambahkan state ini
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
 
@@ -184,6 +184,23 @@ const PortfolioTerminal: React.FC<PortfolioTerminalProps> = ({ onExit }) => {
     </div>
   );
 
+  const cvInfo = () => (
+    <div className="font-mono space-y-2 text-sm text-[var(--accent-light)]">
+      <div>============ CV DOWNLOAD ============</div>
+      <div>Click link below to download my CV:</div>
+      <a
+        href="/CV-Deffry Abhirama Putra.pdf"
+        download
+        className="text-[var(--main-color)] hover:underline cursor-pointer"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Download CV
+      </a>
+    </div>
+  );
+
+
   const processCommand = (input: string): React.ReactNode => {
     const command = input.toLowerCase().trim();
     switch (command) {
@@ -192,7 +209,7 @@ const PortfolioTerminal: React.FC<PortfolioTerminalProps> = ({ onExit }) => {
       case 'skills': return skillsInfo();
       case 'projects': return projectsInfo();
       case 'contact': return contactInfo();
-      case 'cv': return <div>Downloading...</div>;
+      case 'cv': return cvInfo();
       case 'clear': return 'clear';
       case 'light': setMode('light'); return <div style={{color: themes.light[accent]['--output-color']}}>Mode changed to light</div>;
       case 'dark': setMode('dark'); return <div style={{color: themes.dark[accent]['--output-color']}}>Mode changed to dark</div>;
